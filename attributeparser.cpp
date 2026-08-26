@@ -60,7 +60,7 @@ int main() {
 	for(int i=0; i< n ; i++) {
 		string command;
 		getline(cin,command);
-		parser(command,e[i]);
+		e[i]=parser(command,e[i]);
 		
 
 	}
