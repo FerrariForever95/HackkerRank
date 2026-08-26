@@ -1,50 +1,135 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <cassert>
+#include<bits/stdc++.h>
+
 using namespace std;
-class Student{
-    int marks[5]={};
-    int total;
-    public:
-    void input(){
-        for(int i=0;i<5;i++){
-            cin>>marks[i];
-        }
-    }
-    int calculateTotalScore(){
-        for(int i=0;i<5;i++){
-            total+=marks[i];
-        }
-        return total;
-    }
+//Implement the class Box
+//l,b,h are integers representing the dimensions of the box
+
+// The class should have the following functions :
+
+// Constructors:
+// Box();
+// Box(int,int,int);
+// Box(Box);
+
+
+// int getLength(); // Return box's length
+// int getBreadth (); // Return box's breadth
+// int getHeight ();  //Return box's height
+// long long CalculateVolume(); // Return the volume of the box
+
+//Overload operator < as specified
+//bool operator<(Box& b)
+
+//Overload operator << as specified
+//ostream& operator<<(ostream& out, Box& B)
+class Box {
+private:
+	int length,breadth,height;
+	int volume;
+public:
+	Box() {
+		length=breadth=height=0;
+	}
+	Box(int l, int b, int h) {
+		length=l;
+		breadth=b;
+		height=h;
+
+	}
+	Box(const Box& b) {
+		length=b.length;
+		breadth=b.breadth;
+		height=b.height;
+
+	}
+	int getLength() {
+		return length;
+
+	}
+	int getBreadth() {
+		return breadth;
+
+	}
+	int getHeight() {
+		return height;
+
+	}
+	long long CalculateVolume() {
+		volume=length*breadth*height;
+		return volume;
+
+	}
+	bool operator<(const Box& other) {
+		if(length<other.getLength()) {
+			return true;
+		}
+		else if (length==other.getLength()) {
+			if(breadth<other.getBreadth()) {
+				return true;
+			}
+			else if(breadth==other.getBreadth()) {
+				if(height<other.getHeight()) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+
+		}
+	}
 };
 
-int main() {
-    int n; // number of students
-    cin >> n;
-    Student *s = new Student[n]; // an array of n students
-    
-    for(int i = 0; i < n; i++){
-        s[i].input();
-    }
 
-    // calculate kristen's score
-    int kristen_score = s[0].calculateTotalScore();
+void check2()
+{
+	int n;
+	cin>>n;
+	Box temp;
+	for(int i=0; i<n; i++)
+	{
+		int type;
+		cin>>type;
+		if(type ==1)
+		{
+			cout<<temp<<endl;
+		}
+		if(type == 2)
+		{
+			int l,b,h;
+			cin>>l>>b>>h;
+			Box NewBox(l,b,h);
+			temp=NewBox;
+			cout<<temp<<endl;
+		}
+		if(type==3)
+		{
+			int l,b,h;
+			cin>>l>>b>>h;
+			Box NewBox(l,b,h);
+			if(NewBox<temp)
+			{
+				cout<<"Lesser\n";
+			}
+			else
+			{
+				cout<<"Greater\n";
+			}
+		}
+		if(type==4)
+		{
+			cout<<temp.CalculateVolume()<<endl;
+		}
+		if(type==5)
+		{
+			Box NewBox(temp);
+			cout<<NewBox<<endl;
+		}
 
-    // determine how many students scored higher than kristen
-    int count = 0; 
-    for(int i = 1; i < n; i++){
-        int total = s[i].calculateTotalScore();
-        if(total > kristen_score){
-            count++;
-        }
-    }
+	}
+}
 
-    // print result
-    cout << count;
-    
-    return 0;
+int main()
+{
+	check2();
 }
