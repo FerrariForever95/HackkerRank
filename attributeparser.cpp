@@ -74,5 +74,11 @@ int main() {
 		
 
 	}
-
+	for(int i = 0; i < n; i++) {
+    cout << "Element " << i << endl;
+    cout << "Tag: " << e[i].tagname << endl;
+    cout << "Attribute: " << e[i].attributename << endl;
+    cout << "Value: " << e[i].value << endl;
+    cout << endl;
+}
 }
