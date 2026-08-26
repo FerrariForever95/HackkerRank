@@ -30,6 +30,8 @@ int main()
         cout<<"seven";
         else if(n==8)
         cout<<"eight";
+        else if(n==9)
+        cout<<"nine";
         
     }
     else{
