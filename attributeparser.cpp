@@ -9,7 +9,7 @@ struct Element {
 	string attributename;
 	string value;
 };
-string parser(string command, Element e) {
+Element parser(string command, Element e) {
 	int i=0;
 	int s=0;
 	string tagname;
