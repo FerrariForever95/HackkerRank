@@ -41,9 +41,6 @@ Element parser(string command, Element e) {
 			i++;
 		}
 
-
-
-		cout<<tagname<<" "<<attributename<<" "<<value;
 	}
 	e.tagname=tagname;
 	e.attributename=attributename;
