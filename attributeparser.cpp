@@ -16,6 +16,7 @@ Element parser(string command, Element e) {
 	string attributename;
 	string value;
 	if(command[0]=='<' && command[command.length()-1]=='>') {
+	    i=1;
 		while(command[i]!=' ') {
 			tagname+=command[i];
 			i++;
