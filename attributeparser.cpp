@@ -15,18 +15,7 @@ Element parser(string command, Element e) {
 	string tagname;
 	string attributename;
 	string value;
-	bool completion=false;
 	if(command[0]=='<' && command[command.length()-1]=='>') {
-		for(int s=0; s<command.length(); s++) {
-			if(command[s]=='/') {
-				completion=true;
-			}
-
-
-		}
-		if(completion!=false){
-
-		i=1;
 		while(command[i]!=' ') {
 			tagname+=command[i];
 			i++;
@@ -55,7 +44,6 @@ Element parser(string command, Element e) {
 
 		cout<<tagname<<" "<<attributename<<" "<<value;
 	}
-	}
 	e.tagname=tagname;
 	e.attributename=attributename;
 	e.value=value;
@@ -66,6 +54,7 @@ int main() {
 	int n;
 	int q;
 	cin>>n>>q;
+	cin.ignore();
 	struct Element e[n];
 	for(int i=0; i< n ; i++) {
 		string command;
