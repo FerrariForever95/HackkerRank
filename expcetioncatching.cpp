@@ -35,16 +35,16 @@ int main() {
 		cin >> A >> B;
 int result;        try{
         result=Server::compute(A,B); 
-        cout<<result;
+        cout<<result<<"\n";
         }
         catch (bad_alloc){
             cout<<"Not enough memory\n";
         }
         catch(exception& e){
-            cout<<"Exception: " + e.what();
+            cout<<"Exception: " + e.what()+<<"\n";
         }
         catch(...){
-            
+            cout<<"Other Exception\n";
         }
 	}
 	cout << Server::getLoad() << endl;
