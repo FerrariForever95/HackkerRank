@@ -17,9 +17,10 @@ private:
 };
 // Enter your code here.
 ostream& operator<<(ostream& os, const Person& p){
-    os<<"first_name="<<p.get_first_name()<<","<<"last_name="<<p.get_last_name()<<endl;
-}
+    os<<"first_name="<<p.get_first_name()<<","<<"last_name="<<p.get_last_name();
+    return os;
 
+}
 
 int main() {
     string first_name, last_name, event;
