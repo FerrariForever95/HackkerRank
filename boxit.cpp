@@ -36,21 +36,21 @@ class Box{
         height=h;
         
     }
-    Box(const Box& b){
+    Box(const Box& b) {
         length=b.length;
         breadth=b.breadth;
         height=b.height;
         
     }
-    int getLength(){
+    int getLength() const{
         return length;
         
     }
-    int getBreadth(){
+    int getBreadth() const{
         return breadth;
         
     }
-    int getHeight(){
+    int getHeight() const{
         return height;
         
     }
