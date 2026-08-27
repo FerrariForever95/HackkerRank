@@ -60,14 +60,14 @@ class Box{
         
     }
      bool operator<(const Box& other){
-         if(length>other.getLength()){
+         if(length<other.getLength()){
              return true;
          }
          else if (length==other.getLength()){
-             if(breadth>other.getBreadth()){
+             if(breadth<other.getBreadth()){
              return true;}
              else if(breadth==other.getBreadth()){
-                 if(height>other.getBreadth()){
+                 if(height<other.getBreadth()){
                      return true;
                  }
                  else{
