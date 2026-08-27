@@ -1,0 +1,31 @@
+#include <sstream>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<int> parseInts(string str) {
+	// Complete this function
+    vector<int> integers
+    char ch;
+    int x;
+    stringstream ss(str);
+    operator >> ())
+    {
+        while(ss>>x){
+            integers.push_back(x);
+            ss>>ch;
+            
+        }
+    }
+}
+
+int main() {
+    string str;
+    cin >> str;
+    vector<int> integers = parseInts(str);
+    for(int i = 0; i < integers.size(); i++) {
+        cout << integers[i] << "\n";
+    }
+    
+    return 0;
+}
