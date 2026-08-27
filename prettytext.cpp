@@ -12,12 +12,12 @@ int main() {
 		double C; cin >> C;
         int x=(int)A;
         
-    cout << nouppercase << hex << showbase << x << "\n";
+    cout << setw(0)<<nouppercase << hex << showbase << x << "\n";
 
-        cout << fixed << setprecision(2) << showpos
+        cout << right<<fixed << setprecision(2) << showpos
              << setfill('_') << setw(15) << B << "\n";
 
-        cout <<uppercase<< scientific << setprecision(9) << C << "\n";
+        cout <<noshowpos<<uppercase<< scientific << setprecision(9) << C << "\n";
     
 	}
 	return 0;
