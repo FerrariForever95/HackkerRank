@@ -25,7 +25,7 @@ using namespace std;
 class Box{
     private:
     int length,breadth,height;
-    int volume;
+    long long volume;
     public:
     Box(){
         length=breadth=height=0;
@@ -56,6 +56,7 @@ class Box{
     }
     long long CalculateVolume(){
         volume=length*breadth*height;
+        return volume;
         
     }
      bool operator<(const Box& other){
