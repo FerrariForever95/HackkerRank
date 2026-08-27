@@ -21,12 +21,13 @@ int main() {
         switch(q){
             case 1:
             cin>>value;
-            m.insert(make_pair(name,value));
+            m[name]+=value;
             break;
             case 2:
             m.erase(name);
             break;
             case 3:
+            cin>>name;
             cout<<m[name];
             
         }
