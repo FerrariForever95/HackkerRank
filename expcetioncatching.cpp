@@ -37,11 +37,11 @@ int result;        try{
         result=Server::compute(A,B); 
         cout<<result<<"\n";
         }
-        catch (bad_alloc){
+        catch (bad_alloc&  e){
             cout<<"Not enough memory\n";
         }
         catch(exception& e){
-            cout<<"Exception: " + e.what()+<<"\n";
+            cout<<"Exception: "<< e.what()<<"\n";
         }
         catch(...){
             cout<<"Other Exception\n";
