@@ -67,7 +67,7 @@ class Box{
              if(breadth<other.getBreadth()){
              return true;}
              else if(breadth==other.getBreadth()){
-                 if(height<other.getBreadth()){
+                 if(height<other.getHeight()){
                      return true;
                  }
                  else{
