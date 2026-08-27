@@ -14,6 +14,7 @@ int main() {
     int q;
     string name;
     int value;
+    cin>>n;
     map <string,int> m;
     for(int i=0;i<n;i++){
         cin>>q>>name>>value;
