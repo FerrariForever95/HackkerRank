@@ -24,7 +24,7 @@ int main() {
             break;
             case 3:
             set<int>::iterator itr=s.find(value);
-            if(*itr==value){
+            if(itr!=s.end()){
                 cout<<"Yes"<<"\n";
                 
             }
