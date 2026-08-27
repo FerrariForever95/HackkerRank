@@ -10,7 +10,10 @@ class BadLengthException{
     BadLengthException(int a){
         n=a;
     }
+    int what() {
+    return n;
 }
+};
 /* Define the exception here */
 
 
