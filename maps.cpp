@@ -27,8 +27,7 @@ int main() {
             m.erase(name);
             break;
             case 3:
-            cin>>name;
-            cout<<m[name];
+            cout<<m[name]<<'\n';
             
         }
     }
