@@ -25,7 +25,6 @@ using namespace std;
 class Box{
     private:
     int length,breadth,height;
-    long long volume;
     public:
     Box(){
         length=breadth=height=0;
@@ -54,32 +53,26 @@ class Box{
         return height;
         
     }
-    long long CalculateVolume(){
-        volume=length*breadth*height;
-        return volume;
-        
+    long long CalculateVolume() {
+    return (long long)length * breadth * height;
+}
+     
+  bool operator<(Box& other) {
+    if (length < other.getLength()) {
+        return true;
     }
-     bool operator<(const Box& other){
-         if(length<other.getLength()){
-             return true;
-         }
-         else if (length==other.getLength()){
-             if(breadth<other.getBreadth()){
-             return true;}
-             else if(breadth==other.getBreadth()){
-                 if(height<other.getHeight()){
-                     return true;
-                 }
-                 else{
-                     return false;
-                 }
-             }
-             else{
-                 return false;
-             }
-             
-         }
-         return false;
+    else if (length == other.getLength()) {
+        if (breadth < other.getBreadth()) {
+            return true;
+        }
+        else if (breadth == other.getBreadth()) {
+            if (height < other.getHeight()) {
+                return true;
+            }
+        }
+    }
+
+    return false;
 }
 
 };
