@@ -24,7 +24,7 @@ class Equilateral: public Triangle{
     void equilateral(){
         cout<<"I am an equilateral triangle\n";
     }
-}
+};
 int main(){
   
     Equilateral eqr;
