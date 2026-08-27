@@ -10,9 +10,14 @@ int main() {
 		double A; cin >> A;
 		double B; cin >> B;
 		double C; cin >> C;
-    cout <<nouppercase<< hex << showbase << A<<"\n";
-    cout << fixed << setprecision(2) << showpos << B<<"\n";
-    cout << setprecision(9) << C<<"\n";
+        int x=(int)A;
+        
+    cout << nouppercase << hex << showbase << x << "\n";
+
+        cout << fixed << setprecision(2) << showpos
+             << setfill('_') << setw(15) << B << "\n";
+
+        cout <<uppercase<< scientific << setprecision(9) << C << "\n";
     
 	}
 	return 0;
