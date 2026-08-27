@@ -17,9 +17,10 @@ int main() {
     cin>>n;
     map <string,int> m;
     for(int i=0;i<n;i++){
-        cin>>q>>name>>value;
+        cin>>q>>name;
         switch(q){
             case 1:
+            cin>>value;
             m.insert(make_pair(name,value));
             break;
             case 2:
