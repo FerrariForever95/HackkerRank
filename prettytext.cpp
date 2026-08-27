@@ -10,7 +10,7 @@ int main() {
 		double A; cin >> A;
 		double B; cin >> B;
 		double C; cin >> C;
-        int x=(int)A;
+        long long x = (long long)A;
         
     cout << setw(0)<<nouppercase << hex << showbase << x << "\n";
 
