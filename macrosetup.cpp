@@ -1,8 +1,7 @@
 #define INF 10000000
 #define foreach(v,i) for(int i = 0; i < v.size(); i++)
 #define io(v) cin >> v
-#define maximum(mn,v[i]) mn>=v[i] ? true:false
-
+#define maximum(mx,v[i]) v[i]>=mx ? mx=v[i]: ;
 #include <iostream>
 #include <vector>
 using namespace std;
