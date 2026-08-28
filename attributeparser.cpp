@@ -3,69 +3,78 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <string>
+#include <map>
+#include <sstream>
+
 using namespace std;
-struct Element {
-	string tagname;
-	string attributename;
-	string value;
-};
-Element parser(string command, Element e) {
-	int i=0;
-	int s=0;
-	string tagname;
-	string attributename;
-	string value;
-	if(command[0]=='<' && command[command.length()-1]=='>') {
-	    i=1;
-		while(command[i]!=' ') {
-			tagname+=command[i];
-			i++;
 
-		}
-		i++;
-		while(command[i]!=' ') {
-			attributename+=command[i];
-			i++;
-		}
-
-		while(command[i]!='=') {
-			i++;
-		}
-		i++;
-		while(command[i]!='"') {
-			i++;
-		}
-		i++;
-		while(command[i]!='"') {
-			value+=command[i];
-			i++;
-		}
-
-	}
-	e.tagname=tagname;
-	e.attributename=attributename;
-	e.value=value;
-	return e;
-
-}
 int main() {
-	int n;
-	int q;
-	cin>>n>>q;
-	cin.ignore();
-	struct Element e[n];
-	for(int i=0; i< n ; i++) {
-		string command;
-		getline(cin,command);
-		e[i]=parser(command,e[i]);
-		
 
-	}
-	for(int i = 0; i < n; i++) {
-    cout << "Element " << i << endl;
-    cout << "Tag: " << e[i].tagname << endl;
-    cout << "Attribute: " << e[i].attributename << endl;
-    cout << "Value: " << e[i].value << endl;
-    cout << endl;
-}
+    int n, q;
+    cin >> n >> q;
+    cin.ignore();
+
+    map<string, string> attributes;
+    vector<string> path;
+
+    for (int i = 0; i < n; i++) {
+
+        string line;
+        getline(cin, line);
+
+        // Closing tag
+        if (line[1] == '/') {
+            path.pop_back();
+            continue;
+        }
+
+        // Remove < and >
+        line = line.substr(1, line.size() - 2);
+
+        stringstream ss(line);
+
+        string tag;
+        ss >> tag;
+
+        path.push_back(tag);
+
+        // Build full path
+        string currentPath = "";
+
+        for (int j = 0; j < path.size(); j++) {
+
+            if (j > 0)
+                currentPath += ".";
+
+            currentPath += path[j];
+        }
+
+        string attribute;
+        string equals;
+        string value;
+
+        while (ss >> attribute >> equals >> value) {
+
+            // Remove quotes
+            value = value.substr(1, value.size() - 2);
+
+            string key = currentPath + "~" + attribute;
+
+            attributes[key] = value;
+        }
+    }
+
+    for (int i = 0; i < q; i++) {
+
+        string query;
+        cin >> query;
+
+        if (attributes.count(query))
+            cout << attributes[query] << endl;
+        else
+            cout << "Not Found!" << endl;
+    }
+
+    return 0;
 }
