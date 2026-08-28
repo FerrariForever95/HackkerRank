@@ -46,7 +46,7 @@ ostream& operator<<(ostream& out, Complex& c)
 //Overload operators + and << for the class complex
 //+ should add two complex numbers as (a+ib) + (c+id) = (a+c) + i(b+d)
 //<< should print a complex number in the format "a+ib"
-complex operator
+
 int main()
 {
     Complex x,y;
