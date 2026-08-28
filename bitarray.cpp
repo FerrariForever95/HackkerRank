@@ -1,28 +1,31 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-    long long S, P, Q, N;
-    cin >> S >> P >> Q >> N;
 
-    const long long MOD = 1LL << 31;
+    unsigned int N, S, P, Q;
 
-    set<long long> seen;
+    cin >> N >> S >> P >> Q;
 
-    long long x = S % MOD;
+    const unsigned int MOD = 1u << 31;
 
-    for (long long i = 0; i < N; i++) {
+    vector<bool> seen(MOD, false);
 
-        if (seen.count(x)) {
-            break;
+    unsigned int x = S % MOD;
+    unsigned int distinct = 0;
+
+    for (unsigned int i = 0; i < N; i++) {
+
+        if (!seen[x]) {
+            seen[x] = true;
+            distinct++;
         }
 
-        seen.insert(x);
-
-        x = (x * P + Q) % MOD;
+        x = ((unsigned long long)x * P + Q) % MOD;
     }
 
-    cout << seen.size() << endl;
+    cout << distinct << endl;
 
     return 0;
 }
