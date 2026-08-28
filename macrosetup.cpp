@@ -1,9 +1,7 @@
 #define INF 10000000
-#define foreach(v,i) {
-    for (int i=0;i<v.size();i++){
-        
-    }
-}
+#define foreach(v,i) for(int i = 0; i < v.size(); i++)
+#define io(v) cin >> v
+#define 
 
 #include <iostream>
 #include <vector>
