@@ -4,6 +4,7 @@
 
 #define io(v) cin >> v
 
+#define toStr(x) cou<<x
 #define FUNCTION(name, op) \
 void name(int &a, int b) { \
     if(b op a) \
