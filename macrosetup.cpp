@@ -1,5 +1,9 @@
 #define INF 10000000
-#define 
+#define foreach(v,i) {
+    for (int i=0;i<v.size();i++){
+        
+    }
+}
 
 #include <iostream>
 #include <vector>
