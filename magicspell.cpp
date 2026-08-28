@@ -61,8 +61,6 @@ class SpellJournal {
 string SpellJournal::journal = "";
 
 void counterspell(Spell *spell) {
-    void counterspell(Spell *spell) {
-
     if (Fireball *f = dynamic_cast<Fireball*>(spell)) {
         f->revealFirepower();
     }
@@ -95,7 +93,6 @@ void counterspell(Spell *spell) {
 
         cout << dp[a.size()][b.size()] << endl;
     }
-}
 
 }
 
