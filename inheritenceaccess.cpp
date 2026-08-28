@@ -1,4 +1,4 @@
-\#include<iostream>
+#include<iostream>
 
 using namespace std;
 
@@ -72,7 +72,7 @@ class C
         }
 };
 
-class D public A,public B,public C
+class D: public A,public B,public C
 {
 
 	int val;
