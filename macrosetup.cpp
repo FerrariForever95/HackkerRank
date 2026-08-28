@@ -1,10 +1,13 @@
 #define INF 10000000
+
 #define foreach(v,i) for(int i = 0; i < v.size(); i++)
+
 #define io(v) cin >> v
-#define maximum(mx,v[i]) v[i]>=mx ? mx=v[i]: ;
+
 #define FUNCTION(name, op) \
 void name(int &a, int b) { \
-    b op a ? a = b : ; \
+    if(b op a) \
+        a = b; \
 }
 
 #include <iostream>
