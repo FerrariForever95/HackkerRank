@@ -5,21 +5,13 @@
 using namespace std;
 
 
-class MessageFactory {
-    int counter = 0;
-
-public:
-    MessageFactory() {}
-
-    Message create_message(const string& text) {
-        return Message(text, counter++);
-    }
-};
 class Message {
+
     string text;
     int id;
 
 public:
+
     Message() {}
 
     Message(string text, int id) {
@@ -35,6 +27,23 @@ public:
         return id < other.id;
     }
 };
+
+
+class MessageFactory {
+
+    int counter = 0;
+
+public:
+
+    MessageFactory() {}
+
+    Message create_message(const string& text) {
+        return Message(text, counter++);
+    }
+
+};
+
+
 class Recipient {
 public:
     Recipient() {}
